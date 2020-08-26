@@ -12,7 +12,7 @@ RUN apt-get update && \
     jackd 
 
 # => Stage 2: prepare sources
-RUN git clone https://github.com/jacktrip/jacktrip.git
+RUN git clone --branch 1.2.1 https://github.com/jacktrip/jacktrip.git
 
 # => Stage 3: Build
 RUN cd jacktrip && \
