@@ -1,0 +1,9 @@
+---
+
+version: '3'
+services: 
+  jacktrip: 
+    build: .
+    ports: 
+      - 4464:4464
+
