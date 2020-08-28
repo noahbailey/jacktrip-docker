@@ -2,8 +2,28 @@
 
 version: '3'
 services: 
+  jackd: 
+    build: jackd
+    volumes: 
+      - jackdsock:/dev/shm/:rw
+    ulimits:
+      rtprio: 99
+    cap_add:
+      - SYS_NICE
+
   jacktrip: 
     build: .
+    depends_on: 
+      - jackd
     ports: 
       - 4464:4464
+    volumes: 
+      - jackdsock:/dev/shm/:rw
+    ulimits:
+      rtprio: 99
+    cap_add:
+      - SYS_NICE
 
+
+volumes: 
+  jackdsock: 
