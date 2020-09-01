@@ -6,7 +6,7 @@ RUN apt-get update && \
     TZ=etc/UTC \
     apt-get install -y \
         alsa-base alsa-utils \
-        jackd && \
+        jackd2 && \
     echo "@audio  -  rtprio  99" | tee -a /etc/security/limits.conf
 
 # => Run stage: 

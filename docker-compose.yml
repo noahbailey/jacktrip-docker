@@ -6,6 +6,7 @@ services:
     build: jackd
     volumes: 
       - jackdsock:/dev/shm/:rw
+      - /dev/snd:/dev/snd
     ulimits:
       rtprio: 99
     cap_add:
@@ -19,6 +20,7 @@ services:
       - 4464:4464
     volumes: 
       - jackdsock:/dev/shm/:rw
+      - /dev/snd:/dev/snd
     ulimits:
       rtprio: 99
     cap_add:
